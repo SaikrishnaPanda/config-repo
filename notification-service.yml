@@ -1,0 +1,4 @@
+server:
+  port: 8084
+my-app:
+  welcome-message: "Hello from GitHub Config!"
