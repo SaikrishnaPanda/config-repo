@@ -31,3 +31,9 @@ eureka:
    prefer-ip-address: true
     # This forces Eureka to show the IP in the dashboard
    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
