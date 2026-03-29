@@ -37,3 +37,23 @@ management:
     web:
       exposure:
         include: refresh
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      companyService:
+        registerHealthIndicator: true
+        slidingWindowSize: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+
+  retry:
+    instances:
+      companyService:
+        maxAttempts: 3
+        waitDuration: 1s
+
+  timelimiter:
+    instances:
+      companyService:
+        timeoutDuration: 2s
